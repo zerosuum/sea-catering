@@ -1,6 +1,8 @@
 import React from "react";
+import { useState } from "react";
 import "./Menu.css";
 import MenuCard from "./MenuCard";
+import Modal from "./Modal";
 import meal_1 from "../../assets/meal-1.jpg";
 import meal_2 from "../../assets/meal-2.jpg";
 import meal_3 from "../../assets/meal-3.jpg";
@@ -33,6 +35,16 @@ const dummyMenuData = [
 ];
 
 const Menu = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedMeal, setSelectedMeal] = useState(null);
+
+  const handleShowDetails = (mealData) => {
+    setSelectedMeal(mealData);
+    setIsModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="menu-section ">
       <div className="menu-list">
@@ -43,8 +55,14 @@ const Menu = () => {
             title={meal.title}
             description={meal.description}
             price={meal.price}
+            onShowDetails={() => handleShowDetails(meal)}
           />
         ))}
+        <Modal
+          show={isModalOpen}
+          onClose={handleCloseModal}
+          data={selectedMeal}
+        />
       </div>
     </div>
   );
