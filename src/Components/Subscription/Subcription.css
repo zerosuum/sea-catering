@@ -1,0 +1,107 @@
+.subscription-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.subscription-form-wrapper {
+  max-width: 800px;
+  margin: 50px auto 0 auto;
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #28231e;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #6a994e;
+}
+
+.radio-group,
+.checkbox-group,
+.checkbox-group-days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.checkbox-group-days {
+  gap: 15px;
+}
+
+.radio-label,
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.price-display {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f8f7f5;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.price-display h3 {
+  margin: 0 0 10px 0;
+  color: #555;
+}
+
+.price-display p {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #6a994e;
+}
+
+.submit-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  padding: 15px;
+  margin-top: 30px;
+
+  background-color: #6a994e;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease-out;
+}
+
+.submit-btn:hover {
+  background-color: #567d3e;
+}
