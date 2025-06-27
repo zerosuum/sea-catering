@@ -12,7 +12,7 @@ const Navbar = () => {
       <ul>
         <li>Home</li>
         <li>Menu</li>
-        <li>Our Service</li>
+        <li>Subscription</li>
         <li>
           <button className="btn">Contact Us</button>
         </li>
