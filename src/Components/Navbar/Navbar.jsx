@@ -31,9 +31,22 @@ const Navbar = () => {
         <span className="logo-text">sea catering</span>
       </div>
 
-      <div className="menu-icon" onClick={handleToggle}>
+      <button
+        className="menu-icon"
+        onClick={handleToggle}
+        aria-expanded={menuOpen}
+        aria-controls="nav-menu-list"
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+      >
         {menuOpen ? <FaTimes /> : <FaBars />}
-      </div>
+      </button>
+
+      <ul
+        id="nav-menu-list"
+        className={menuOpen ? "nav-menu-active" : "nav-menu"}
+      >
+        {/* ... list item Anda ... */}
+      </ul>
 
       <ul className={menuOpen ? "nav-menu-active" : "nav-menu"}>
         <li className="nav-item">
