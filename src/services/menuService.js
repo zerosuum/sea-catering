@@ -1,17 +1,30 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const dummyMenuData = [
+  {
+    _id: "menu1",
+    image: "/meal-1.jpg",
+    title: "Classic Caprese Salad",
+    description: "A timeless Italian salad...",
+    price: 55000,
+  },
+  {
+    _id: "menu2",
+    image: "/meal-2.jpg",
+    title: "Hearty Beef Curry",
+    description: "Tender chunks of beef...",
+    price: 80000,
+  },
+  {
+    _id: "menu3",
+    image: "/meal-3.jpg",
+    title: "Radiant Pink Smoothie",
+    description: "A vibrant and refreshing blend...",
+    price: 47500,
+  },
+];
 
+// TAMBAHKAN 'export' DI SINI
 export const getMenuItems = async () => {
-  const fetchUrl = `${API_BASE_URL}/menu`;
-  console.log("Frontend mencoba mengambil data dari:", fetchUrl); // <-- TAMBAHKAN INI
-
-  try {
-    const response = await fetch(fetchUrl);
-    if (!response.ok) {
-      throw new Error("Failed to fetch menu items");
-    }
-    return await response.json();
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
+  console.log("Mengambil data dari API PALSU untuk menu...");
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  return dummyMenuData;
 };

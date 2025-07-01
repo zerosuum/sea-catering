@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "checkJs": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "types": ["vite/client", "node"]
+  },
+  "include": ["src", "vite.config.js", "src/backendServer.js"]
+}

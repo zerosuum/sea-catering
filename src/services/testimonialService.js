@@ -1,33 +1,31 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+let dummyTestimonials = [
+  {
+    _id: "testi1",
+    name: "Emily Williams",
+    review: "The variety and taste are incredible!...",
+    rating: 5,
+  },
+  {
+    _id: "testi2",
+    name: "William Jackson",
+    review: "Perfectly portioned and macro-friendly...",
+    rating: 5,
+  },
+];
 
 export const getTestimonials = async () => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/testimonials`);
-    if (!response.ok) {
-      throw new Error("Failed to fetch testimonials");
-    }
-    return await response.json();
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
+  console.log("Mengambil data dari API PALSU untuk testimoni...");
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  return [...dummyTestimonials].reverse();
 };
 
 export const postTestimonial = async (testimonialData) => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/testimonials`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(testimonialData),
-    });
-    if (!response.ok) {
-      throw new Error("Failed to post testimonial");
-    }
-    return await response.json();
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
+  console.log("Mengirim testimoni ke API PALSU...");
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  const newTestimonial = {
+    _id: `testi${Date.now()}`,
+    ...testimonialData,
+  };
+  dummyTestimonials.push(newTestimonial);
+  return newTestimonial;
 };
